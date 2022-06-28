@@ -1,0 +1,32 @@
+Prefix(:=<http://www.iiitd.ac.in/sweb/myOntology#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.iiitd.ac.in/sweb/myOntology>
+
+Declaration(Class(:Person))
+Declaration(Class(:Man))
+Declaration(Class(:Woman))
+Declaration(Class(:Mother))
+Declaration(Class(:Parent))
+############################
+#   Classes
+############################
+
+# Class: :Woman (:Woman)
+
+SubClassOf(:Woman :Person)
+
+# Class: :Man (:Man)
+
+SubClassOf(:Man :Person)
+
+EquivalentClasses(:Person ObjectUnionOf(:Man :Woman))
+
+EquivalentClasses(:Woman ObjectIntersectionOf(:Parent :Mother))
+
+)
